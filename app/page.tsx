@@ -1,3 +1,5 @@
+import ResourceCard from "@/components/ResourceCard";
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 const resources = [
   {
@@ -44,12 +46,12 @@ export default function Home() {
           </div>
 
           <h1 className="text-6xl font-extrabold leading-tight">
-            Everything You Need
-            <br />
-            <span className="text-blue-500">
-              To Build on Arc
-            </span>
-          </h1>
+  Everything You Need
+  <br />
+  <span className="text-blue-500 drop-shadow-[0_0_20px_rgba(59,130,246,0.6)]">
+    To Build on Arc
+  </span>
+</h1>
 
           <p className="text-gray-400 max-w-2xl mx-auto mt-6 text-lg">
             Discover official documentation, developer tools,
@@ -61,7 +63,7 @@ export default function Home() {
 
             <a
               href="#resources"
-              className="rounded-xl bg-blue-600 px-6 py-3 hover:bg-blue-700 transition"
+               className="rounded-xl bg-blue-600 px-6 py-3 font-semibold transition-all duration-300 hover:bg-blue-700 hover:scale-105"
             >
               Get Started
             </a>
@@ -69,7 +71,7 @@ export default function Home() {
             <a
               href="https://docs.arc.io"
               target="_blank"
-              className="rounded-xl border border-zinc-700 px-6 py-3 hover:bg-zinc-900 transition"
+              className="rounded-xl border border-zinc-700 px-6 py-3 font-semibold transition-all duration-300 hover:bg-zinc-900 hover:scale-105"
             >
               Documentation
             </a>
@@ -91,32 +93,20 @@ export default function Home() {
             Everything you need to start building on Arc.
           </p>
 
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {resources.map((item) => (
-              <a
-                key={item.title}
-                href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-2xl border border-zinc-800 bg-zinc-900 p-6 hover:border-blue-500 hover:-translate-y-1 transition-all"
-              >
-                <h3 className="text-xl font-semibold mb-2">
-                  {item.title}
-                </h3>
-
-                <p className="text-gray-400">
-                  {item.description}
-                </p>
-
-                <p className="mt-5 text-blue-400 font-medium">
-                  Open →
-                </p>
-              </a>
-            ))}
-          </div>
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+  {resources.map((item) => (
+    <ResourceCard
+      key={item.title}
+      title={item.title}
+      description={item.description}
+      url={item.url}
+    />
+  ))}
+</div>
         </section>
 
       </main>
+   <Footer /> 
     </>
   );
 }
