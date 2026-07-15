@@ -6,7 +6,7 @@ export default function ToolsPage() {
     <>
       <Navbar />
 
-      <main className="min-h-screen bg-gradient-to-b from-black via-zinc-950 to-black px-6 py-20 text-white">
+       <main className="min-h-screen text-white">
         <div className="mx-auto max-w-6xl">
           <h1 className="mb-6 text-5xl font-bold">Developer Tools</h1>
 
