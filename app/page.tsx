@@ -7,12 +7,10 @@ export default function Home() {
   return (
     <>
       <Navbar />
-
       <main className="min-h-screen bg-gradient-to-b from-black via-zinc-950 to-black text-white">
         <Hero />
         <Resources />
       </main>
-
       <Footer />
     </>
   );

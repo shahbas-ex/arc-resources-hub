@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="max-w-6xl mx-auto px-6 py-24 text-center">
+     <section className="max-w-6xl mx-auto px-6 pt-24 pb-16 text-center">
       <div className="inline-block rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-1 text-sm text-blue-400 mb-6">
         🚀 Build Faster on Arc
       </div>
