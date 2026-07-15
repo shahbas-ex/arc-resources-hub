@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import ResourceCard from "./ResourceCard";
 
 const resources = [
@@ -34,6 +37,14 @@ const resources = [
 ];
 
 export default function Resources() {
+  const [search, setSearch] = useState("");
+
+  const filteredResources = resources.filter(
+    (resource) =>
+      resource.title.toLowerCase().includes(search.toLowerCase()) ||
+      resource.description.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
     <section
       id="resources"
@@ -43,12 +54,20 @@ export default function Resources() {
         Resources
       </h2>
 
-      <p className="text-gray-400 mb-10">
+      <p className="text-gray-400 mb-8">
         Everything you need to start building on Arc.
       </p>
 
+      <input
+        type="text"
+        placeholder="🔍 Search resources..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        className="w-full mb-10 rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 text-white outline-none focus:border-blue-500"
+      />
+
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {resources.map((item) => (
+        {filteredResources.map((item) => (
           <ResourceCard
             key={item.title}
             title={item.title}
