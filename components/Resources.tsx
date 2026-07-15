@@ -4,7 +4,15 @@ import { useState } from "react";
 import ResourceCard from "./ResourceCard";
 import { resources } from "@/data/resources";
 
-const categories = ["All", "Docs", "Tools", "Community", "Learn"];
+const categories = [
+  "All",
+  "Docs",
+  "Whitepaper",
+  "Tools",
+  "Community",
+  "Ecosystem",
+  "News",
+];
 
 export default function Resources() {
   const [search, setSearch] = useState("");
@@ -83,12 +91,13 @@ export default function Resources() {
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {filteredResources.map((item) => (
-          <ResourceCard
-            key={item.title}
-            title={item.title}
-            description={item.description}
-            url={item.url}
-          />
+         <ResourceCard
+  key={item.title}
+  title={item.title}
+  description={item.description}
+  category={item.category}
+  url={item.url}
+/>
         ))}
       </div>
 
